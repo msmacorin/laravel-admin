@@ -13,6 +13,8 @@
         <link href="{{ asset('/template/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <!-- Font Awesome -->
         <link href="{{ asset('/template/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="{{ asset('/template/nprogress/nprogress.css') }}" rel="stylesheet">
         <!-- Custom Theme Style -->
         <link href="{{ asset('/template/build/css/custom.min.css') }}" rel="stylesheet">
     </head>
@@ -30,19 +32,23 @@
 
                 <!-- page content -->
                 <div class="right_col" role="main">
-                    {% block content %}{% endblock %}
-                </div>
-                <!-- /page content -->
-
-                <!-- footer content -->
-                {% include 'footer' %}
-                <!-- /footer content -->
+                {% block content %}{% endblock %}
             </div>
-        </div>
+            <!-- /page content -->
 
-        <!-- jQuery -->
-        <script src="{{ asset('/template/jquery/jquery.min.js') }}"></script>
-        <!-- Bootstrap -->
-        <script src="{{ asset('/template/bootstrap/js/bootstrap.min.js') }}"></script>
-    </body>
+            <!-- footer content -->
+            {% include 'footer' %}
+            <!-- /footer content -->
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{{ asset('/template/jquery/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('/template/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ asset('/template/nprogress/nprogress.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{{ asset('/template/build/js/custom.min.js') }}"></script>
+</body>
 </html>
