@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Laravel-Admin</title>
+
+        <!-- Bootstrap -->
+        <link href="{{ asset('/template/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="{{ asset('/template/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <!-- Custom Theme Style -->
+        <link href="{{ asset('/template/build/css/custom.min.css') }}" rel="stylesheet">
+    </head>
+
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                <!-- menu left navigation -->
+                {% include 'navigation' %}
+                <!-- /menu left navigation -->
+
+                <!-- top navigation -->
+                {% include 'top-navigation' %}
+                <!-- /top navigation -->
+
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    {% block content %}{% endblock %}
+                </div>
+                <!-- /page content -->
+
+                <!-- footer content -->
+                {% include 'footer' %}
+                <!-- /footer content -->
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="{{ asset('/template/jquery/jquery.min.js') }}"></script>
+        <!-- Bootstrap -->
+        <script src="{{ asset('/template/bootstrap/js/bootstrap.min.js') }}"></script>
+    </body>
+</html>
