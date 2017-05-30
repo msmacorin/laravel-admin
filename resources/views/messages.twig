@@ -1,0 +1,18 @@
+{% if errors.any() %}
+    <div class="alert alert-danger">
+        {% for error in errors.all() %}
+            <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% if status|length > 0 %}
+    <div class="alert alert-info">
+        {% if status is iterable %}
+            {% for message in status.all() %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% else %}
+            <p>{{ status }}</p>
+        {% endif %}
+    </div>
+{% endif %}

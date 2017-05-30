@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ config('app.name') }} | {{ trans('auth.login') }}</title>
+        <!-- Bootstrap -->
+        <link href="{{ asset('/template/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="{{ asset('/template/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="{{ asset('/template/nprogress/nprogress.css') }}" rel="stylesheet">
+        <!-- Custom Theme Style -->
+        <link href="{{ asset('/template/build/css/custom.min.css') }}" rel="stylesheet">
+    </head>
+
+    <body class="login">
+        <div>
+            <div class="login_wrapper">
+                <div class="form login_form">
+                    <section class="login_content">
+                        <form method="POST" action="{{ route('password.email') }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                            <h1>{{ trans('auth.recover_password') }}</h1>
+                            <div>
+                                <input type="email" name="email" class="form-control" placeholder="{{ trans('auth.email') }}" required value="{{ old('email') }}" />
+                            </div>
+                            {% include 'messages' %}
+                            <div>
+                                <input type="submit" class="btn btn-block btn-success submit" value="{{ trans('auth.send_email_to_recover_password') }}" />
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="separator">
+                                <p class="change_link">{{ trans('auth.already_a_member') }}
+                                    <a href="{{ route('login') }}" class="to_register"> {{ trans('auth.login') }} </a>
+                                </p>
+                                <div class="clearfix"></div>
+                                <br />
+                                <p class="change_link">{{ trans('auth.new_in_site') }}
+                                    <a href="{{ route('register') }}" class="to_register"> {{ trans('auth.create_account') }} </a>
+                                </p>
+                                <div class="clearfix"></div>
+                                <br />
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
