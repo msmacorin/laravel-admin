@@ -40,13 +40,15 @@
 
                             <div class="clearfix"></div>
 
-                            <div class="separator">
-                                <p class="change_link">{{ trans('auth.new_in_site') }}
-                                    <a href="{{ route('register') }}" class="to_register"> {{ trans('auth.create_account') }} </a>
-                                </p>
-                                <div class="clearfix"></div>
-                                <br />
-                            </div>
+                            {% if configs.guess_create_user %}
+                                <div class="separator">
+                                    <p class="change_link">{{ trans('auth.new_in_site') }}
+                                        <a href="{{ route('register') }}" class="to_register"> {{ trans('auth.create_account') }} </a>
+                                    </p>
+                                    <div class="clearfix"></div>
+                                    <br />
+                                </div>
+                            {% endif %}
                         </form>
                     </section>
                 </div>

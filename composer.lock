@@ -4,9 +4,71 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2f559e06481910beeacef13d478f2130",
-    "content-hash": "40b8b8dbb367ba17c40cf79a27f1d95b",
+    "hash": "297f5d0f036bead39b842ae016bfc915",
+    "content-hash": "93ef04236b5cdb9dc53344428ea81e6f",
     "packages": [
+        {
+            "name": "artesaos/defender",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/artesaos/defender.git",
+                "reference": "1918d56fbf9db4de5bc3b4e7f58979b8040cf489"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/artesaos/defender/zipball/1918d56fbf9db4de5bc3b4e7f58979b8040cf489",
+                "reference": "1918d56fbf9db4de5bc3b4e7f58979b8040cf489",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "~5.4",
+                "illuminate/database": "~5.4",
+                "illuminate/http": "~5.4",
+                "illuminate/support": "~5.4",
+                "illuminate/view": "~5.4",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~1.0",
+                "fzaninotto/faker": "~1.5",
+                "orchestra/database": "~3.4@dev",
+                "orchestra/testbench": "~3.4@dev",
+                "phpspec/phpspec": "~2.1",
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Artesaos\\Defender\\": "src/Defender/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreo Vieira",
+                    "email": "andreoav@gmail.com"
+                },
+                {
+                    "name": "Vagner do Carmo",
+                    "email": "vluzrmos@gmail.com"
+                },
+                {
+                    "name": "Luiz Vinicius Reis",
+                    "email": "luiz.vinicius73@gmail.com"
+                },
+                {
+                    "name": "Mauri de Souza Nunes",
+                    "email": "mauri870@gmail.com",
+                    "homepage": "https://mauri870.github.io"
+                }
+            ],
+            "description": "Roles & Permissions for Laravel 5",
+            "time": "2017-03-30 22:38:13"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -545,16 +607,16 @@
         },
         {
             "name": "laravel/tinker",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/tinker.git",
-                "reference": "3d5b675b55b24ccbf86395964042dbe061d5a965"
+                "reference": "7eb2e281395131897407285672ef5532e87e17f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/tinker/zipball/3d5b675b55b24ccbf86395964042dbe061d5a965",
-                "reference": "3d5b675b55b24ccbf86395964042dbe061d5a965",
+                "url": "https://api.github.com/repos/laravel/tinker/zipball/7eb2e281395131897407285672ef5532e87e17f9",
+                "reference": "7eb2e281395131897407285672ef5532e87e17f9",
                 "shasum": ""
             },
             "require": {
@@ -575,6 +637,11 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Tinker\\TinkerServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -599,7 +666,7 @@
                 "laravel",
                 "psysh"
             ],
-            "time": "2016-12-30 18:13:17"
+            "time": "2017-06-01 16:31:26"
         },
         {
             "name": "league/flysystem",
@@ -3709,7 +3776,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "artesaos/defender": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

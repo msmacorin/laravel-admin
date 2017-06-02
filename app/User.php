@@ -3,11 +3,15 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+use Artesaos\Defender\Traits\HasDefender;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable {
 
-    use Notifiable;
+    use Notifiable, HasDefender;
+    
+    const STATUS_ACTIVE = 1;
+    const STATUS_BLOCKED = 2;
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +19,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password, status',
     ];
 
     /**

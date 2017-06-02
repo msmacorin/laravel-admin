@@ -156,6 +156,10 @@ return [
          * Twig
          */
         TwigBridge\ServiceProvider::class,
+        /*
+         * Artesaos/Defender
+         */
+        Artesaos\Defender\Providers\DefenderServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------
@@ -202,5 +206,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Twig' => TwigBridge\Facade\Twig::class,
+        'Defender' => Artesaos\Defender\Facades\Defender::class,
     ],
 ];

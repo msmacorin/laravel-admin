@@ -12,6 +12,7 @@ class HomeController extends Controller {
      * @return void
      */
     public function __construct() {
+//        $this->middleware('needsRole:admin|user');
         $this->middleware('auth');
     }
 
