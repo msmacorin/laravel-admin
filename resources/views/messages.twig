@@ -22,3 +22,20 @@
         {% endif %}
     </div>
 {% endif %}
+{% if session_has('status') %}
+    <div class="alert alert-success">
+        {% if session_get('status') is iterable %}
+            {% for message in session_get('status') %}
+                {% if message is iterable %}
+                    {% for msg in message %}
+                        {{ msg }}
+                    {% endfor %}
+                {% else %}
+                    {{ message }}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {{ session_get('status') }}
+        {% endif %}
+    </div>
+{% endif %}
