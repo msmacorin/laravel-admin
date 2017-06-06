@@ -12,12 +12,14 @@
  */
 
 Route::get('/', function () {
-    return view('page');
+    return redirect('home');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'ProfileController@index')->name('profile');
+Route::post('/profile', 'ProfileController@save')->name('profile');
 
 // usando middleware
 //Route::get('/foo', ['middleware' => ['auth', 'needsRole'], 'is' => 'admin', function() {

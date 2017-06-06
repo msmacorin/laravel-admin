@@ -14,13 +14,13 @@ class CreateTableProfile extends Migration {
     public function up() {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('phone')->nullable();
-            $table->string('image')->nullable();
+            $table->string('phone', 15)->nullable();
             $table->string('address')->nullable();
-            $table->string('address_number')->nullable();
-            $table->integer('zip_code')->nullable();
+            $table->string('zip_code', 10)->nullable();
             $table->string('city')->nullable();
-            $table->string('state')->nullable();
+            $table->string('state', 2)->nullable();
+            $table->string('image')->nullable();
+            $table->integer('user_id')->unique();
             $table->timestamps();
         });
     }

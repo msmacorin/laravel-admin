@@ -5,14 +5,20 @@
         {% endfor %}
     </div>
 {% endif %}
-{% if status|length > 0 %}
-    <div class="alert alert-info">
-        {% if status is iterable %}
-            {% for message in status.all() %}
-                <p>{{ message }}</p>
+{% if session_has('messages') %}
+    <div class="alert alert-success">
+        {% if session_get('messages') is iterable %}
+            {% for message in session_get('messages') %}
+                {% if message is iterable %}
+                    {% for msg in message %}
+                        {{ msg }}
+                    {% endfor %}
+                {% else %}
+                    {{ message }}
+                {% endif %}
             {% endfor %}
         {% else %}
-            <p>{{ status }}</p>
+            {{ session_get('messages') }}
         {% endif %}
     </div>
 {% endif %}
