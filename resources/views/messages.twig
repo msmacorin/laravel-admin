@@ -1,0 +1,24 @@
+{% if errors.any() %}
+    <div class="alert alert-danger">
+        {% for error in errors.all() %}
+            <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% if session_has('messages') %}
+    <div class="alert alert-success">
+        {% if session_get('messages') is iterable %}
+            {% for message in session_get('messages') %}
+                {% if message is iterable %}
+                    {% for msg in message %}
+                        {{ msg }}
+                    {% endfor %}
+                {% else %}
+                    {{ message }}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {{ session_get('messages') }}
+        {% endif %}
+    </div>
+{% endif %}

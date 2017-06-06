@@ -11,7 +11,7 @@ return [
       | any other location as required by the application or its packages.
      */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Laravel-Admin'),
     /*
       |--------------------------------------------------------------------------
       | Application Environment
@@ -55,7 +55,7 @@ return [
       | ahead and set this to a sensible default for you out of the box.
       |
      */
-    'timezone' => 'UTC',
+    'timezone' => 'America/Sao_Paulo',
     /*
       |--------------------------------------------------------------------------
       | Application Locale Configuration
@@ -66,7 +66,7 @@ return [
       | to any of the locales which will be supported by the application.
       |
      */
-    'locale' => 'en',
+    'locale' => 'pt-BR',
     /*
       |--------------------------------------------------------------------------
       | Application Fallback Locale
@@ -77,7 +77,7 @@ return [
       | the language folders that are provided through your application.
       |
      */
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'pt-BR',
     /*
       |--------------------------------------------------------------------------
       | Encryption Key
@@ -156,6 +156,10 @@ return [
          * Twig
          */
         TwigBridge\ServiceProvider::class,
+        /*
+         * Artesaos/Defender
+         */
+        Artesaos\Defender\Providers\DefenderServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------
@@ -202,5 +206,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Twig' => TwigBridge\Facade\Twig::class,
+        'Defender' => Artesaos\Defender\Facades\Defender::class,
     ],
 ];
