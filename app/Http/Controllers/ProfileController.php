@@ -7,6 +7,8 @@ use App\Http\Services\ProfileService;
 
 class ProfileController extends Controller {
 
+    use \Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+    
     public function __construct() {
         $this->middleware('auth');
     }
@@ -24,7 +26,11 @@ class ProfileController extends Controller {
         }
         return back()->with('messages', $response->message());
     }
-
+    
+    protected function sendResetLinkResponse($response) {
+        return redirect('/profile')->with('messages', trans('passwords.sent'));
+    }
+    
     private function getStates() {
         $states = [
             'AC' => 'Acre',

@@ -64,6 +64,11 @@
         </div>
 
     </form>
+
+    <form id="reset_password_form" method="POST" action="{{ url('/profile/reset-password') }}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+        <input type="hidden" value="{{ user.email }}" name="email" />
+    </form>
 {% endblock %}
 {% block javascript %}
     {{ parent() }}

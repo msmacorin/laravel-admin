@@ -17,9 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile', 'ProfileController@index')->name('profile');
-Route::post('/profile', 'ProfileController@save')->name('profile');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    
+    // profile
+    Route::get('/profile', 'ProfileController@index')->name('profile');
+    Route::post('/profile', 'ProfileController@save')->name('profile');
+    Route::post('/profile/reset-password', 'ProfileController@sendResetLinkEmail');
+});
 
 // usando middleware
 //Route::get('/foo', ['middleware' => ['auth', 'needsRole'], 'is' => 'admin', function() {
